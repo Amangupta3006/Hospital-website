@@ -1,8 +1,7 @@
 "use client";
 
-
 import React, { useState, useEffect, useCallback } from "react";
-import { Phone, Clock, MapPin, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 interface HeaderProps {
@@ -48,7 +47,7 @@ export default function Header({ onOpenBooking, onCallNow }: HeaderProps) {
     e.preventDefault();
     const el = document.getElementById(targetId);
     if (el) {
-      const topOffset = isScrolled ? 70 : 110;
+      const topOffset = 70;
       const offsetPosition = el.getBoundingClientRect().top + window.scrollY - topOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       setActiveSection(targetId);
@@ -58,26 +57,8 @@ export default function Header({ onOpenBooking, onCallNow }: HeaderProps) {
 
   return (
     <div className={`header-root fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "scrolled" : ""}`}>
-      {/* Top Info Bar */}
-      <div className="info-bar bg-hospital-navy text-white text-[11px] md:text-xs px-6 py-2.5 flex flex-col md:flex-row justify-between items-center border-b border-white/10 font-medium tracking-wide uppercase">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-          <span className="flex items-center gap-1.5 hover:text-hospital-teal transition-colors">
-            <Phone className="w-3.5 h-3.5 text-hospital-teal" />
-            01662-235633, 235600 | 90506-73076
-          </span>
-          <span className="flex items-center gap-1.5 hover:text-hospital-teal transition-colors">
-            <Clock className="w-3.5 h-3.5 text-hospital-teal" />
-            OPD: Mon–Sat, 10:00 AM – 7:00 PM
-          </span>
-        </div>
-        <span className="flex items-center gap-1.5 hover:text-hospital-teal transition-colors mt-1 md:mt-0">
-          <MapPin className="w-3.5 h-3.5 text-hospital-teal" />
-          Purani Kutchary Chowk, HISAR – 125 001
-        </span>
-      </div>
-
       {/* Main Navbar */}
-      <header className="bg-white/95 backdrop-blur-md py-2 px-6 md:px-10 flex justify-between items-center border-b border-gray-100 shadow-sm">
+      <header className="bg-white/95 backdrop-blur-md py-2.5 px-6 md:px-10 flex justify-between items-center border-b border-gray-100 shadow-sm">
         <Image
           src="/logo.png"
           alt="Hisar Children Hospital Logo"
@@ -94,10 +75,11 @@ export default function Header({ onOpenBooking, onCallNow }: HeaderProps) {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className={`relative py-1 uppercase tracking-wider text-xs transition-colors ${activeSection === item.id
+              className={`relative py-1 uppercase tracking-wider text-xs transition-colors ${
+                activeSection === item.id
                   ? "text-hospital-teal after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-hospital-teal"
                   : "text-hospital-navy/80 hover:text-hospital-teal"
-                }`}
+              }`}
             >
               {item.label}
             </a>
@@ -123,23 +105,27 @@ export default function Header({ onOpenBooking, onCallNow }: HeaderProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[110px] bg-white z-40 flex flex-col p-6 space-y-4 border-t border-gray-100 shadow-xl animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-[65px] bg-white z-40 flex flex-col p-6 space-y-4 border-t border-gray-100 shadow-xl animate-fade-in">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className={`py-3 px-4 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${activeSection === item.id
+              className={`py-3 px-4 rounded-lg font-bold text-sm uppercase tracking-wider transition-all ${
+                activeSection === item.id
                   ? "bg-hospital-teal-light text-hospital-teal border-l-4 border-hospital-teal"
                   : "text-hospital-navy hover:bg-gray-50"
-                }`}
+              }`}
             >
               {item.label}
             </a>
           ))}
           <div className="pt-6 border-t border-gray-100">
             <button
-              onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenBooking();
+              }}
               className="w-full bg-hospital-teal hover:bg-hospital-teal-accent text-white py-3 rounded-xl font-bold uppercase tracking-wider shadow-md text-xs transition-colors"
             >
               Book Appointment
