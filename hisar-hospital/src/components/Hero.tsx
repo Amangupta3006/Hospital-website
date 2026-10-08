@@ -1,11 +1,20 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Clock, Phone, MapPin } from "lucide-react";
+import { Clock, Phone, MapPin, LucideIcon } from "lucide-react";
 import { slidesData } from "@/data";
 
 interface HeroProps {
   onOpenBooking: () => void;
+}
+
+interface QuickAction {
+  title: string;
+  sub: string;
+  icon: LucideIcon;
+  href?: string;
+  onClick?: () => void;
+  external?: boolean;
 }
 
 // Height (cm) the child "grows" to on each slide
@@ -38,7 +47,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   const cm = HEIGHTS[currentSlide % HEIGHTS.length];
   const shift = yFor(cm) - Y0;
 
-  const quickActions = [
+  const quickActions: QuickAction[] = [
     { title: "OPD timings", sub: "Mon–Sat, 10 AM – 7 PM", icon: Clock, href: "#contact" },
     { title: "Emergency call", sub: "90506-73076 (24/7)", icon: Phone, href: "tel:+919050673076" },
     { title: "Get directions", sub: "Purani Kutchary Chowk", icon: MapPin, href: MAPS_URL, external: true },
