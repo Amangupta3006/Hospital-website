@@ -97,7 +97,7 @@ export const servicesData: ServiceItem[] = [
   { id: 5,  title: "Pediatric Surgery",            imageUrl: "/img25.jpeg" },
   { id: 6,  title: "Pediatric Pulmonology",        imageUrl: "/img16.jpeg" },
   { id: 7,  title: "Pharmacy",                     imageUrl: "/img1.jpeg"  },
-  { id: 8,  title: "Pediatric ENT",                imageUrl: "/motto.jpeg"  },
+  { id: 8,  title: "Pediatric ENT",                imageUrl: "/motto.jpeg" },
   { id: 9,  title: "ICU & Critical Care",          imageUrl: "/img27.jpeg" },
   { id: 10, title: "Pharmacy & Laboratory",        imageUrl: "/img18.jpeg" },
   { id: 11, title: "Diagnostic Center",            imageUrl: "/img17.jpeg" },

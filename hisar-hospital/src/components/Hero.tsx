@@ -63,7 +63,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
 
       <main
         id="home"
-        className="relative overflow-hidden bg-hospital-navy text-white pt-[110px] [.scrolled~&]:pt-[70px] transition-[padding] duration-300"
+        className="relative overflow-x-hidden bg-hospital-navy text-white pt-[110px] [.scrolled~&]:pt-[70px] transition-[padding] duration-300"
       >
         {/* Decoration */}
         <div
@@ -71,13 +71,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           style={{ background: "radial-gradient(circle, rgba(15,155,142,.45), transparent 65%)" }}
           aria-hidden="true"
         />
-        <span className="hero-float absolute left-[6%] top-[22%] text-5xl font-black text-white/10 select-none" aria-hidden="true">+</span>
-        <span className="hero-float absolute left-[46%] bottom-[22%] text-3xl font-black text-white/10 select-none" style={{ animationDelay: "-3s" }} aria-hidden="true">+</span>
-        <span className="hero-float absolute right-[8%] top-[24%] text-6xl font-black text-white/10 select-none" style={{ animationDelay: "-5s" }} aria-hidden="true">+</span>
+        <span className="hero-float absolute left-[2%] top-[22%] text-4xl sm:text-5xl font-black text-white/10 select-none pointer-events-none" aria-hidden="true">+</span>
+        <span className="hero-float absolute left-[46%] bottom-[22%] text-2xl sm:text-3xl font-black text-white/10 select-none pointer-events-none" style={{ animationDelay: "-3s" }} aria-hidden="true">+</span>
+        <span className="hero-float absolute right-[3%] top-[24%] text-5xl sm:text-6xl font-black text-white/10 select-none pointer-events-none" style={{ animationDelay: "-5s" }} aria-hidden="true">+</span>
 
-        <div className="relative mx-auto max-w-6xl px-5 pt-8 pb-28 md:pt-14 md:pb-32 grid gap-10 md:grid-cols-[1.2fr_0.8fr] items-center">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-6 pb-24 md:pt-14 md:pb-32 grid gap-8 md:grid-cols-[1.2fr_0.8fr] items-center">
           {/* Text side */}
-          <div>
+          <div className="w-full">
             <div className="flex items-center gap-3 text-[#35d6c6] text-xs md:text-sm font-extrabold tracking-[0.14em] uppercase">
               Hisar Newborn &amp; Children Hospital
               <span className="hidden sm:block h-[3px] w-14 bg-[#35d6c6]" aria-hidden="true" />
@@ -94,19 +94,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                       }`}
                     aria-hidden={!active}
                   >
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase leading-[1.02] tracking-tight">
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase leading-[1.05] tracking-tight">
                       {slide.title} <span className="text-[#35d6c6]">{slide.highlightText}</span>
                     </h1>
-                    <p className="mt-4 max-w-lg text-base md:text-lg text-white/80">{slide.description}</p>
+                    <p className="mt-3 sm:mt-4 max-w-lg text-sm sm:text-base md:text-lg text-white/80">{slide.description}</p>
                   </div>
                 );
               })}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-6 sm:mt-7 flex flex-wrap gap-3">
               <a
                 href="tel:+911662235633"
-                className="bg-hospital-teal text-white font-extrabold text-sm tracking-wider uppercase pl-6 pr-10 py-4 min-h-[52px] inline-flex items-center hover:brightness-110 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
+                className="bg-hospital-teal text-white font-extrabold text-xs sm:text-sm tracking-wider uppercase px-6 py-3.5 sm:py-4 min-h-[48px] sm:min-h-[52px] inline-flex items-center hover:brightness-110 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
                 style={{ clipPath: "polygon(0 0, 100% 0, 92% 100%, 0 100%)" }}
               >
                 Call now
@@ -115,14 +115,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-hospital-navy font-extrabold text-sm tracking-wider uppercase pl-6 pr-10 py-4 min-h-[52px] inline-flex items-center hover:bg-gray-100 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
+                className="bg-white text-hospital-navy font-extrabold text-xs sm:text-sm tracking-wider uppercase px-6 py-3.5 sm:py-4 min-h-[48px] sm:min-h-[52px] inline-flex items-center hover:bg-gray-100 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
                 style={{ clipPath: "polygon(0 0, 100% 0, 92% 100%, 0 100%)" }}
               >
                 Get directions
               </a>
             </div>
 
-            <div className="mt-7 flex items-center gap-2">
+            <div className="mt-6 sm:mt-7 flex items-center gap-2">
               {slidesData.map((_, idx) => (
                 <button
                   key={idx}
@@ -136,9 +136,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
 
-          {/* Growth chart: the child grows as the slides change */}
+          {/* Growth chart card */}
           <div
-            className="order-first md:order-last mx-auto w-full max-w-[230px] md:max-w-none bg-white rounded-[30px] px-4 pt-4 pb-2 shadow-2xl"
+            className="order-first md:order-last mx-auto w-full max-w-[210px] sm:max-w-[230px] md:max-w-none bg-white rounded-[24px] sm:rounded-[30px] p-3 sm:p-4 shadow-2xl overflow-hidden"
             aria-hidden="true"
           >
             <svg viewBox="0 0 300 380" className="block w-full h-auto">
@@ -172,7 +172,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                 <text x="90" y="13" fontSize="10" fontWeight="800" fill="#fff">{cm} cm</text>
               </g>
             </svg>
-            <p className="text-center text-hospital-navy font-extrabold text-xs tracking-wide uppercase pb-2">
+            <p className="text-center text-hospital-navy font-extrabold text-[11px] sm:text-xs tracking-wide uppercase pt-1 pb-1">
               From sickness to smiles
             </p>
           </div>
@@ -180,7 +180,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       </main>
 
       {/* Quick actions overlap the bottom of the hero */}
-      <section aria-label="Quick actions" className="relative z-10 mx-auto -mt-14 max-w-4xl px-5">
+      <section aria-label="Quick actions" className="relative z-10 mx-auto -mt-12 sm:-mt-14 max-w-4xl px-4 sm:px-5">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
           {quickActions.map(({ title, sub, icon: Icon, onClick, href, external }) => {
             const cls =
