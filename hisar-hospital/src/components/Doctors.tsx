@@ -3,7 +3,7 @@ import { doctorsData } from "@/data";
 import { Doctor } from "@/data/types";
 
 interface DoctorsProps {
-  onSelectDoctor: (doctorName: string) => void;
+  onSelectDoctor?: (doctorName: string) => void;
 }
 
 export default function Doctors({ onSelectDoctor }: DoctorsProps) {
@@ -35,24 +35,20 @@ export default function Doctors({ onSelectDoctor }: DoctorsProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-hospital-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-6 md:p-8 flex flex-col items-center text-center flex-grow">
-                <h3 className="text-lg md:text-xl font-bold text-hospital-navy mb-1 group-hover:text-hospital-teal transition-colors">
-                  {doctor.name}
-                </h3>
-                <p className="text-xs font-semibold text-hospital-grey/60 uppercase tracking-wider mb-3">
-                  {doctor.credentials}
-                </p>
-                <div className="bg-hospital-teal-light px-4 py-1.5 rounded-full mb-6">
+              <div className="p-6 md:p-8 flex flex-col items-center text-center flex-grow justify-between">
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-hospital-navy mb-1 group-hover:text-hospital-teal transition-colors">
+                    {doctor.name}
+                  </h3>
+                  <p className="text-xs font-semibold text-hospital-grey/60 uppercase tracking-wider mb-3">
+                    {doctor.credentials}
+                  </p>
+                </div>
+                <div className="bg-hospital-teal-light px-4 py-1.5 rounded-full mt-2">
                   <p className="text-hospital-teal font-extrabold text-xs tracking-wider uppercase">
                     {doctor.role}
                   </p>
                 </div>
-                <button
-                  onClick={() => onSelectDoctor(doctor.name)}
-                  className="w-full bg-hospital-navy hover:bg-hospital-teal text-white py-3 px-6 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-hospital-teal focus:ring-offset-2"
-                >
-                  Book Appointment
-                </button>
               </div>
             </div>
           ))}
