@@ -98,7 +98,7 @@ export default function About() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
               <Image
                 alt="Pediatrician examining infant"
-                src="/img19.jpeg"
+                src="/slide1.jpeg"
                 width={640}
                 height={450}
                 className="w-full h-[300px] sm:h-[400px] md:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
