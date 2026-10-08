@@ -34,7 +34,7 @@ module.exports = {
         },
       },
       animation: {
-        marquee: 'marquee 30s linear infinite',
+        marquee: 'marquee 5s linear infinite',
         'fade-in': 'fadeIn 0.3s ease-out forwards',
         'scale-up': 'scaleUp 0.3s ease-out forwards',
       },
