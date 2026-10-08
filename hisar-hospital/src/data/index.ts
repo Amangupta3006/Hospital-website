@@ -90,15 +90,20 @@ export const valuesData: ValueItem[] = [
 ];
 
 export const servicesData: ServiceItem[] = [
-  { id: 1,  title: "General Pediatrics",          imageUrl: "/general.jpeg" },
+  { id: 1,  title: "General Pediatrics",           imageUrl: "/general.jpeg" },
   { id: 2,  title: "Pediatric Emergency",          imageUrl: "/img12.jpeg" },
   { id: 3,  title: "Neonatology (NICU)",           imageUrl: "/img26.jpeg" },
-  { id: 4,  title: "Vaccination & Immunization",   imageUrl: "/img13.jpeg" },
+  { id: 4,  title: "Vaccination & Immunization",   imageUrl: "/.jpeg" },
   { id: 5,  title: "Pediatric Cardiology",         imageUrl: "/img25.jpeg" },
   { id: 7,  title: "Pharmacy",                     imageUrl: "/img1.jpeg"  },
   { id: 8,  title: "Pediatric ENT",                imageUrl: "/motto.jpeg" },
   { id: 9,  title: "ICU & Critical Care",          imageUrl: "/img27.jpeg" },
-  { id: 10, title: "Laboratory Collection Center", imageUrl: "/img18.jpeg" },
-  { id: 11, title: "Diagnostic Center",            imageUrl: "/img17.jpeg" },
-  { id: 12, title: "Ambulance Service",            imageUrl: "/img5.jpeg"  },
+  { id: 10, title: "Diagnostic Center",            imageUrl: "/img17.jpeg" },
+  { id: 11, title: "Ambulance Service",            imageUrl: "/img5.jpeg"  },
+  { id: 12,  title: "OPD Waiting Area",            imageUrl: "/img13.jpeg" },
+  { id: 13,  title: "24/7 Canteen",                imageUrl: "/canteen.jpeg" },
+  { id: 14,  title: "Reception Area",              imageUrl: "/reception.jpeg" },
+  { id: 15,  title: "In-Patient Care",              imageUrl: "/care.jpeg" },
+  { id: 16, title: "Laboratory Collection Center", imageUrl: "/img18.jpeg" },
+
 ];
